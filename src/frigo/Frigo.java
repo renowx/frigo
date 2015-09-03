@@ -33,11 +33,11 @@ public class Frigo {
 	
 	@Override
 	public String toString() {
-		String aliments;
+		String aliments = "";
 		for (Aliment aliment : listeAliments) {
-			aliments = aliment.toString() + " ";
+			aliments = aliments + aliment.toString() + "\n";
 		}
-		return super.toString();
+		return aliments;
 	}
 	
 	/*public String[] alimentCSV(){ 
