@@ -30,7 +30,6 @@ public class Main {
 
 		while(choix == 0){
 
-
 			System.out.println("Que voulez-vous faire ?\n");
 			System.out.println("1) Voir le contenu de votre frigo");
 			System.out.println("2) Ajouter ou retirer un aliment");
@@ -98,28 +97,77 @@ public class Main {
 						}
 						System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 					}
+
+					System.out.println("Quel est le nom de votre aliment?");
+					String nom = sc.nextLine();
+
+					System.out.println("En quel quantité?");
+					int qute = Integer.parseInt(sc.nextLine());
+
+					System.out.println("Quel est sa date de péremption?(format mm/jj/aaaa)");
+					System.out.println("(ecrire no si il y en a pas)");
+					String dateRecup = sc.nextLine();
+					String unite;
 					
 					switch (choix3) {
 					case 1: // un fruit
-						System.out.println("Quel est le nom de votre fruit?");
-						String nom = sc.nextLine();
-						
-						System.out.println("En quel quantité?");
-						int qute = sc.nextInt();
-						
-						System.out.println("Quel est sa date de péremption?(format jj/mm/aaaa)");
-						System.out.println("(ecrire no si il y en a pas)");
-						String dateRecup = sc.nextLine();
+
 						if(dateRecup.equals("no")){
-							Fruit fruit = new Fruit(nom, qute, "");
+							frigo.setAliments(new Fruit(nom, qute, ""));
 						}
-						
+						else{
+							try {
+								frigo.setAliments(new Fruit(nom, new Date(dateRecup), qute, ""));
+							} catch (Exception e) {
+								// TODO: handle exception
+							}
+						}
+						choix = 0;
+						break;
+					case 2: // laitier
+
+						System.out.println("Quel est l'unité de votre produit laitier (gramme, litre ou unite)");
+						unite = sc.nextLine();
+						if(unite.equals("unite")){
+							unite = "";
+						}
+						if(dateRecup.equals("no")){
+							frigo.setAliments(new Laitier(nom, qute, unite));
+						}
+						else{
+							try {
+								frigo.setAliments(new Laitier(nom, new Date(dateRecup), qute, unite));
+							} catch (Exception e) {
+								// TODO: handle exception
+							}
+						}
+						choix = 0;
+						break;
+					case 3: // Legume
+
+						System.out.println("Quel est l'unité de votre produit laitier (gramme, litre ou unite)");
+						unite = sc.nextLine();
+						if(unite.equals("unite")){
+							unite = "";
+						}
+						if(dateRecup.equals("no")){
+							frigo.setAliments(new Laitier(nom, qute, unite));
+						}
+						else{
+							try {
+								frigo.setAliments(new Laitier(nom, new Date(dateRecup), qute, unite));
+							} catch (Exception e) {
+								// TODO: handle exception
+							}
+						}
+						choix = 0;
 						break;
 
 					default:
 						break;
+
 					}
-					
+					System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 					break;
 				case 2 : //retirer un aliment
 

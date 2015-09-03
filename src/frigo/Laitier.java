@@ -9,4 +9,8 @@ public class Laitier extends Aliment{
 		// TODO Auto-generated constructor stub
 	}
 
+	public Laitier(String nom, int qute, String unite) {
+		super(nom, qute, unite);
+	}
+
 }
