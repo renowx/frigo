@@ -57,15 +57,15 @@ public class Main {
 				choix = 0;
 				break;
 			case 2: // ajouter ou enlever un aliment
-				int choixBis = 0;
-				while(choixBis == 0){
+				int choix2 = 0;
+				while(choix2 == 0){
 					System.out.println("Que voulez-vous faire ?\n");
 					System.out.println("1) ajoutez un aliment");
 					System.out.println("2) retirez un aliment");
-					while(choixBis<1 || choixBis>2){
+					while(choix2<1 || choix2>2){
 						System.out.println("Faites un choix valide entre 1 et 2");
 						try {
-							choixBis = Integer.parseInt(sc.nextLine());
+							choix2 = Integer.parseInt(sc.nextLine());
 						} catch (NumberFormatException e) {
 
 						}
@@ -76,28 +76,50 @@ public class Main {
 					System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 				}
 
-				switch (choixBis) {
+				switch (choix2) {
 				case 1: // ajouter un aliment
-					int choixBisBis = 0;
-					while(choixBisBis == 0){
+					int choix3 = 0;
+					while(choix3 == 0){
 						System.out.println("Que voulez vous ajouter ?\n");
 						System.out.println("1) Un fruit");
 						System.out.println("2) Un produit laitier");
 						System.out.println("3) Un legume");
 						System.out.println("4) De la viande");
-						while(choixBisBis<1 || choixBis>4){
+						while(choix3<1 || choix3>4){
 							System.out.println("Faites un choix valide entre 1 et 4");
 							try {
-								choixBisBis = Integer.parseInt(sc.nextLine());
+								choix3 = Integer.parseInt(sc.nextLine());
 							} catch (NumberFormatException e) {
 
 							}
-							if(choix<1 || choix>4){
+							if(choix3<1 || choix3>4){
 								System.out.println("Ceci n'est pas un choix valide\n");
 							}
 						}
 						System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 					}
+					
+					switch (choix3) {
+					case 1: // un fruit
+						System.out.println("Quel est le nom de votre fruit?");
+						String nom = sc.nextLine();
+						
+						System.out.println("En quel quantité?");
+						int qute = sc.nextInt();
+						
+						System.out.println("Quel est sa date de péremption?(format jj/mm/aaaa)");
+						System.out.println("(ecrire no si il y en a pas)");
+						String dateRecup = sc.nextLine();
+						if(dateRecup.equals("no")){
+							Fruit fruit = new Fruit(nom, qute, "");
+						}
+						
+						break;
+
+					default:
+						break;
+					}
+					
 					break;
 				case 2 : //retirer un aliment
 
