@@ -20,4 +20,5 @@ public class Aliment {
 	public String toString(){
 		return quantite + " " + unite + " " + nom + "(s)";
 	}
+
 }
