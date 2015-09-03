@@ -1,6 +1,12 @@
 package frigo;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Comparator;
+import java.util.Date;
+import java.util.Collections;
+import java.util.List;
 
 public class Recette {
 	String nom;
@@ -52,8 +58,27 @@ public class Recette {
 		return res;
 	}
 	
+	public boolean estConsommable(Aliment a){
+		Date c = Calendar.getInstance( ).getTime();
+		if (a.getPeremption().before(c)){
+			return true;
+		} else {
+			return false;
+		}
+	}
 	
-	
+	public List<Aliment> triSelonDatePeremption(){
+		Aliment[] alimentsTries = (Aliment[]) listeAliments.toArray();
+
+		//Aliment[] alimentsTries = listeAliments.toArray(new Aliment[]{});
+		Arrays.sort(alimentsTries, new Comparator<Aliment>() {
+			@Override
+			public int compare(Aliment o1, Aliment o2) {
+				return o1.getPeremption().compareTo(o2.getPeremption());
+			}
+		});
+		return new ArrayList<Aliment>(Arrays.asList(alimentsTries));
+	}
 	
 }
 
