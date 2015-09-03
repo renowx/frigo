@@ -17,21 +17,20 @@ public class Aliment {
 		this.unite = unite;
 	}
 	
-	//public String toString(){
-		//String perm = "" + quantite + " " + unite + " " + nom+ "(s)";
-		//return perm;
-	//}
+	public String toString(){
+		String perm = "" + quantite + " " + unite + " " + nom+ "(s)";
+		return perm;
+	}
 	
 	public String getNom() {
 		return nom;
 	}
 
 	@Override
-	public String toString() {
+	/*public String toString() {
 		return "" + nom + ", peremption="
-				+ peremption + ", quantite=" + quantite + ", unite=" + unite
-				+ "]";
-	}
+				+ peremption + ", quantite=" + quantite + ", unite=" + unite;
+	}*/
 
 	public String getType() {
 		return type;

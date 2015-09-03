@@ -17,9 +17,8 @@ public class Main {
 		 frigo.setAliments(eggs);
 		 frigo.setAliments(beurre);
 		 
-		 System.out.println(tomate.toString());
-		 beurre.toString();
-		 eggs.toString();
+		 System.out.println(frigo);
+		 
 		 
 		 
 	}
