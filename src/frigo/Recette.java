@@ -37,10 +37,17 @@ public class Recette {
 						res = true;
 					}
 					else{
+						System.out.println("Recette impossible !");
 						return false;
 					}
 				}
 			}
+		}
+		if(res == true){
+			System.out.println("Recette possible !");
+		}
+		else{
+			System.out.println("Recette impossible !");
 		}
 		return res;
 	}
