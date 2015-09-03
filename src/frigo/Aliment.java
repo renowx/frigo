@@ -17,8 +17,8 @@ public class Aliment {
 		this.unite = unite;
 	}
 	
-	public String toString(){
-		return quantite + " " + unite + " " + nom + "(s)";
+	public String toString(Aliment aliment){
+		return aliment.getQuantite() + " " + aliment.getUnite() + " " + aliment.getNom()+ "(s)";
 	}
 	
 	public String getNom() {
