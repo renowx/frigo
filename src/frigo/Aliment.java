@@ -28,7 +28,7 @@ public class Aliment {
 
 	@Override
 	public String toString() {
-		return "Aliment [nom=" + nom + ", type=" + type + ", peremption="
+		return "" + nom + ", peremption="
 				+ peremption + ", quantite=" + quantite + ", unite=" + unite
 				+ "]";
 	}
