@@ -40,6 +40,17 @@ public class Frigo {
 		return aliments;
 	}
 	
+	public void retirerQuantite(Aliment aliment, int quantite) {
+		for (Aliment aliment2 : listeAliments) {
+			if(aliment.getNom().equals(aliment2.getNom()) && aliment.getQuantite()-quantite>=0){
+				aliment.setQuantite(aliment.getQuantite()-quantite);
+			}
+			else{
+				System.out.println("Vous n'avez pas assez de quantité");
+			}
+		}
+	}
+	
 	/*public String[] alimentCSV(){ 
 		int compteur;
 		File file = new File("");
