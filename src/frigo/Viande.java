@@ -8,5 +8,9 @@ public class Viande extends Aliment{
 		super(nom, peremption, quantite, unite);
 		// TODO Auto-generated constructor stub
 	}
+	
+	public Viande(String nom, int quantite, String unite) {
+		super(nom, quantite, unite);
+	}
 
 }

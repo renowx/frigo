@@ -16,6 +16,14 @@ abstract class Aliment {
 		this.unite = unite;
 	}
 	
+	public Aliment(String nom, int quantite, String unite) {
+		this.nom = nom;
+		this.quantite = quantite;
+		this.unite = unite;
+		// TODO Auto-generated constructor stub
+	}
+
+
 	public String toString(){
 		String perm = "" + quantite + unite + " " + nom + "(s)";
 		return perm;
