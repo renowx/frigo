@@ -18,20 +18,14 @@ public class Aliment {
 	}
 	
 	public String toString(){
-		String perm = "" + quantite + " " + unite + " " + nom+ "(s)";
+		String perm = "" + quantite + unite + " " + nom + "(s)";
 		return perm;
 	}
 	
 	public String getNom() {
 		return nom;
 	}
-
-	@Override
-	/*public String toString() {
-		return "" + nom + ", peremption="
-				+ peremption + ", quantite=" + quantite + ", unite=" + unite;
-	}*/
-
+	
 	public String getType() {
 		return type;
 	}
