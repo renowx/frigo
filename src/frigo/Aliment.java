@@ -16,7 +16,7 @@ abstract class Aliment {
 		this.unite = unite;
 	}
 	
-	public Aliment(String nom, int quantite, String unite) {
+	protected Aliment(String nom, int quantite, String unite) {
 		this.nom = nom;
 		this.quantite = quantite;
 		this.unite = unite;
@@ -25,7 +25,7 @@ abstract class Aliment {
 
 
 	public String toString(){
-		String perm = "" + quantite + unite + " " + nom + "(s)";
+		String perm = "" + quantite + unite + " " + nom + "(s)" + " Date de peremption" + peremption;
 		return perm;
 	}
 	

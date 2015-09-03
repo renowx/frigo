@@ -10,26 +10,64 @@ import java.util.ArrayList;
 public class Frigo {
 
 	ArrayList<Aliment> listeAliments;
+	ArrayList<Recette> listeRecettes;
 	
+	public ArrayList<Recette> getListeRecettes() {
+		return listeRecettes;
+	}
+	
+	public void setListeRecettes(Recette listeRecettes) {
+		this.listeRecettes.add(listeRecettes);
+	}
+
 	public Frigo() {
 		this.listeAliments = new ArrayList<Aliment>();
+		this.listeRecettes = new ArrayList<Recette>();
 	}
-	
+		
 	public ArrayList<Aliment> getListeAliments() {
-		return listeAliments;
+		return listeAliments;	
 	}
-	
+		
 	public void setAliments(Aliment aliment) {
 		this.listeAliments.add(aliment);
 	}
-	
-	@Override
+		
+	public void enleverAliments(String nom){
+		for (Aliment aliment : listeAliments) {
+			if(aliment.getNom().equals(nom)){
+				listeAliments.remove(aliment);
+			}
+		}
+	}
+		
 	public String toString() {
 		String aliments = "";
 		for (Aliment aliment : listeAliments) {
 			aliments = aliments + aliment.toString() + "\n";
 		}
 		return aliments;
+	}
+		
+	public String recetteContenu(){
+		int res = 0;
+		String recettes = "";
+		for(Recette recette : getListeRecettes()){
+			for (Aliment aliment : recette.listeAliments) {
+				for(Aliment aliFrigo : getListeAliments()){
+					if(aliFrigo.getNom().equals(aliment.getNom())){
+						if(aliFrigo.getQuantite()>=aliment.getQuantite()){
+							res = res + 1;
+						}
+					}
+				}
+			}
+			if(res == listeRecettes.size()){
+				recettes = recettes + recette.getNom() + " ";
+			}
+			res = 0;
+		}
+	return recettes;
 	}
 	
 	public void retirerQuantite(Aliment aliment, int quantite) {
