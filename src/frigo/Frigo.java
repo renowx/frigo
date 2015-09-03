@@ -23,14 +23,6 @@ public class Frigo {
 		this.listeAliments.add(aliment);
 	}
 	
-	public void enleverAliments(String nom){
-		for (Aliment aliment : listeAliments) {
-			if(aliment.getNom().equals(nom)){
-				listeAliments.remove(aliment);
-			}
-		}
-	}
-	
 	@Override
 	public String toString() {
 		String aliments = "";
@@ -44,6 +36,9 @@ public class Frigo {
 		for (Aliment aliment2 : listeAliments) {
 			if(aliment.getNom().equals(aliment2.getNom()) && aliment.getQuantite()-quantite>=0){
 				aliment.setQuantite(aliment.getQuantite()-quantite);
+				if(aliment.getQuantite()==0){
+					listeAliments.remove(aliment);
+				}
 			}
 			else{
 				System.out.println("Vous n'avez pas assez de quantité");
