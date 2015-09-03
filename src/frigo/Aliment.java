@@ -2,14 +2,14 @@ package frigo;
 
 import java.util.Date;
 
-public abstract class Aliment {
-	private String nom;
-	private String type;
-	private Date peremption;
-	private int quantite;
-	private String unite;
+abstract class Aliment {
+	protected String nom;
+	protected String type;
+	protected Date peremption;
+	protected int quantite;
+	protected String unite;
 	
-	public Aliment(String nom, Date peremption, int quantite, String unite){
+	protected Aliment(String nom, Date peremption, int quantite, String unite){
 		this.nom = nom;
 		this.setPeremption(peremption);
 		this.quantite = quantite;
@@ -21,43 +21,43 @@ public abstract class Aliment {
 		return perm;
 	}
 	
-	public String getNom() {
+	protected String getNom() {
 		return nom;
 	}
 	
-	public String getType() {
+	protected String getType() {
 		return type;
 	}
 
-	public void setType(String type) {
+	protected void setType(String type) {
 		this.type = type;
 	}
 
-	public Date getPeremption() {
+	protected Date getPeremption() {
 		return peremption;
 	}
 
-	public void setPeremption(Date peremption) {
+	protected void setPeremption(Date peremption) {
 		this.peremption = peremption;
 	}
 	
-	public int getQuantite() {
+	protected int getQuantite() {
 		return quantite;
 	}
 	
-	public void setQuantite(int quantite) {
+	protected void setQuantite(int quantite) {
 		this.quantite = quantite;
 	}
 	
-	public String getUnite() {
+	protected String getUnite() {
 		return unite;
 	}
 	
-	public void setNom(String nom) {
+	protected void setNom(String nom) {
 		this.nom = nom;
 	}
 	
-	public void setUnite(String unite) {
+	protected void setUnite(String unite) {
 		this.unite = unite;
 	}
 }
