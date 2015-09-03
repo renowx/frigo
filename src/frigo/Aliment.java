@@ -2,16 +2,15 @@ package frigo;
 
 import java.util.Date;
 
-public class Aliment {
+public abstract class Aliment {
 	private String nom;
 	private String type;
 	private Date peremption;
 	private int quantite;
 	private String unite;
 	
-	public Aliment(String nom, String type, Date peremption, int quantite, String unite){
+	public Aliment(String nom, Date peremption, int quantite, String unite){
 		this.nom = nom;
-		this.setType(type);
 		this.setPeremption(peremption);
 		this.quantite = quantite;
 		this.unite = unite;

@@ -8,8 +8,6 @@ import java.util.ArrayList;
 import junit.framework.Assert;
 import junit.framework.TestCase;
 
-import org.junit.Test;
-
 import frigo.Aliment;
 import frigo.Frigo;
 import frigo.Recette;
@@ -17,13 +15,13 @@ import frigo.Recette;
 public class TestRecette extends TestCase {
 
 	 
-	Aliment oeuf = new Aliment("egg", "viande", new Date(2015, 9, 10), 5, "");
-	Aliment beurre2 = new Aliment("beurre", "laitier", new Date(2015, 10, 6), 100, "g");
+	Aliment oeuf = new Viande("egg", new Date(2015, 9, 10), 5, "");
+	Aliment beurre2 = new Laitier("beurre", new Date(2015, 10, 6), 100, "g");
 	ArrayList<Aliment> Aliment = new ArrayList<Aliment>();
 	
 	Frigo frigo = new Frigo();
-	 Aliment eggs = new Aliment("egg", "viande", new Date(2015, 9, 10), 4, "");
-	 Aliment beurre = new Aliment("beurre", "laitier", new Date(2015, 10, 6), 250, "g");
+	 Aliment eggs = new Viande("egg", new Date(2015, 9, 10), 4, "");
+	 Aliment beurre = new Laitier("beurre", new Date(2015, 10, 6), 250, "g");
 	 
 
 				

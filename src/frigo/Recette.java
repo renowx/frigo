@@ -15,7 +15,7 @@ public class Recette {
 	public String toString(){	
 		String aliments = "";
 		for (Aliment aliment : listeAliments) {
-			aliments = aliments + aliment.toString() + "\n";
+			aliments = aliments + aliment.toString() + " ";
 		}
 		return this.nom + " Ingrédients : " + aliments;
 	}

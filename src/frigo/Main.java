@@ -11,9 +11,9 @@ public class Main {
 		
 		 Frigo frigo = new Frigo();
 
-		 Aliment tomate = new Aliment("tomate", "legume", new Date(2015, 12, 6), 4, "");
-		 Aliment eggs = new Aliment("egg", "viande", new Date(2015, 9, 10), 4, "");
-		 Aliment beurre = new Aliment("beurre", "laitier", new Date(2015, 10, 6), 250, "g");
+		 Aliment tomate = new Fruit("tomate", new Date(2015, 12, 6), 4, "");
+		 Aliment eggs = new Viande("egg", new Date(2015, 9, 10), 4, "");
+		 Aliment beurre = new Laitier("beurre", new Date(2015, 10, 6), 250, "g");
 		 
 		 frigo.setAliments(tomate);
 		 frigo.setAliments(eggs);
