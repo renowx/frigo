@@ -26,7 +26,7 @@ public class Aliment {
 		return nom;
 	}
 
-	@Override
+	
 	/*public String toString() {
 		return "" + nom + ", peremption="
 				+ peremption + ", quantite=" + quantite + ", unite=" + unite;
