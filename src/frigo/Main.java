@@ -108,7 +108,7 @@ public class Main {
 					System.out.println("(ecrire no si il y en a pas)");
 					String dateRecup = sc.nextLine();
 					String unite;
-					
+
 					switch (choix3) {
 					case 1: // un fruit
 
@@ -145,17 +145,32 @@ public class Main {
 						break;
 					case 3: // Legume
 
-						System.out.println("Quel est l'unité de votre produit laitier (gramme, litre ou unite)");
+						System.out.println("Quel est l'unité de votre legume (gramme ou unite)");
 						unite = sc.nextLine();
 						if(unite.equals("unite")){
 							unite = "";
 						}
 						if(dateRecup.equals("no")){
-							frigo.setAliments(new Laitier(nom, qute, unite));
+							frigo.setAliments(new Legume(nom, qute, unite));
 						}
 						else{
 							try {
-								frigo.setAliments(new Laitier(nom, new Date(dateRecup), qute, unite));
+								frigo.setAliments(new Legume(nom, new Date(dateRecup), qute, unite));
+							} catch (Exception e) {
+								// TODO: handle exception
+							}
+						}
+						choix = 0;
+						break;
+				case 4: // Viande
+
+						
+						if(dateRecup.equals("no")){
+							frigo.setAliments(new Legume(nom, qute, "gramme"));
+						}
+						else{
+							try {
+								frigo.setAliments(new Legume(nom, new Date(dateRecup), qute, "gramme"));
 							} catch (Exception e) {
 								// TODO: handle exception
 							}
@@ -169,8 +184,24 @@ public class Main {
 					}
 					System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 					break;
-				case 2 : //retirer un aliment
-
+				case 2 : //retirer un aliment. Il faudra verifié si l'aliment est dans le frigo
+					System.out.println("Quel est le nom de l'aliment que vous souhaitez retirer : ");
+					nom = sc.nextLine();
+					System.out.println("En quelle quantité?");
+					qute = Integer.parseInt(sc.nextLine());
+					
+					for (Aliment ali : frigo.getListeAliments()) { 
+						if(ali.getNom().equals(nom)){
+							//if(ali.getQuantite()>qute){
+								frigo.retirerQuantite(ali, qute);
+							//}
+							if(ali.getQuantite()==0){
+								frigo.enleverAliments(nom);
+							}
+							
+						}
+					}
+					choix = 0;
 					break;
 
 				default : 
