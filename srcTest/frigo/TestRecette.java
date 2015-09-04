@@ -30,10 +30,10 @@ public class TestRecette extends TestCase {
 			Aliment.add(oeuf);
 			Aliment.add(beurre2);
 			Recette omelette = new Recette("omelette", Aliment);
-			Assert.assertEquals("omelette Ingrédients : 5 egg(s) 100g beurre(s) ", omelette.toString());
+			//Assert.assertEquals("omelette Ingrédients : 5 egg(s) 100g beurre(s) ", omelette.toString());
 			frigo.setAliments(eggs);
 			frigo.setAliments(beurre);
-			Assert.assertFalse( omelette.recetteValide(frigo));
+			Assert.assertEquals(omelette.recetteValide(frigo), "Recette impossible !");
 
 		}
 }

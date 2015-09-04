@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class Frigo {
@@ -74,23 +75,19 @@ public class Frigo {
 		}
 	}
 	
-	public void trierListe(){
-		List listNonTrie = new ArrayList<Aliment>();
-		int iter = listeAliments.size();
-		listNonTrie = listeAliments;
-		int i = 0;
-		boolean fini = false;
-		while (listeAliments.get(i).getPeremption().before(listeAliments.get(i+1).getPeremption()) && fini == false){
-			Aliment tmp1 = listeAliments.get(i);
-			Aliment tmp2 = listeAliments.get(i+1);
-			
-			
-		}
-		
 	
+	public static void main (String[] args){
+		Frigo frig = new Frigo();
+		
+		frig.listeAliments.add(new Viande("lol1", new Date(2016, 12, 04), 10, ""));
+		frig.listeAliments.add(new Viande("lol2", new Date(2016, 10, 04), 10, ""));
+		frig.listeAliments.add(new Viande("lol3", new Date(2016, 11, 04), 10, ""));
+		frig.listeAliments.add(new Viande("lol4", new Date(2016, 9, 04), 10, ""));
+		System.out.println(frig.listeAliments.toString());
+		
+		System.out.println(frig.listeAliments.toString());
 		
 	}
-	
 	/*public String[] alimentCSV(){ 
 		int compteur;
 		File file = new File("");
