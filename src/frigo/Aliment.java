@@ -1,16 +1,19 @@
 package frigo;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 abstract class Aliment {
 	protected String nom;
 	protected String type;
-	protected Date peremption;
+	protected GregorianCalendar peremption;
 	protected int quantite;
 	protected String unite;
 	
-	protected Aliment(String nom, Date peremption, int quantite, String unite){
+	protected Aliment(String nom, GregorianCalendar peremption, int quantite, String unite){
 		this.nom = nom;
 		this.setPeremption(peremption);
 		this.quantite = quantite;
@@ -24,9 +27,16 @@ abstract class Aliment {
 		// TODO Auto-generated constructor stub
 	}
 
+	public Date conversion(GregorianCalendar gc){
+		Date date = new Date();
+		if(gc!=null)
+		date = gc.getTime();
+		return date;
+	}
 
 	public String toString(){
-		String perm = "" + quantite + unite + " " + nom + "(s)" + " Date de peremption" + peremption;
+		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+		String perm = "" + quantite + unite + " " + nom + "(s)" + " Date de peremption : " + dateFormat.format(this.conversion(peremption));
 		return perm;
 	}
 	
@@ -42,11 +52,11 @@ abstract class Aliment {
 		this.type = type;
 	}
 
-	protected Date getPeremption() {
+	protected GregorianCalendar getPeremption() {
 		return peremption;
 	}
 
-	protected void setPeremption(Date peremption) {
+	protected void setPeremption(GregorianCalendar peremption) {
 		this.peremption = peremption;
 	}
 	

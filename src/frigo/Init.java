@@ -5,30 +5,10 @@ import java.util.Date;
 
 public class Init {
 
-	public static void initialiserFrigo() {
+	
+	public Frigo initialiserFrigo(Frigo frigo) {
 		
-		Frigo frigo = new Frigo(); 
-
-		Aliment tomate = new Fruit("tomate", new Date(2015, 12, 6), 4, "");
-		Aliment oeufs = new Viande("oeuf", new Date(2015, 9, 10), 6, "");
-		Aliment rape = new Laitier("rape", new Date(2015, 10, 6), 100, "g");
-		Aliment poulet = new Viande("poulet", new Date(2015, 9, 8), 1000, "g");
-		Aliment boeuf = new Viande("boeuf", new Date(2015, 9, 15), 800, "g");
-		Aliment frites = new Legume("frites", new Date(2016, 9, 10), 1500, "g");
-		Aliment haricots = new Legume("haricots", new Date(2015, 9, 20), 250, "g");
-		Aliment dinde = new Viande("dinde", new Date(2015, 9, 30), 300, "g");
-		Aliment cremeFraiche = new Laitier("creme", new Date(2015, 9, 15), 100, "g");
-		
-		frigo.setAliments(tomate);
-		frigo.setAliments(oeufs);
-		frigo.setAliments(rape);
-		frigo.setAliments(poulet);
-		frigo.setAliments(boeuf);
-		frigo.setAliments(frites);
-		frigo.setAliments(haricots);
-		frigo.setAliments(dinde);
-		frigo.setAliments(cremeFraiche);
-
+		 
 		Aliment tomateR = new Fruit("tomate", new Date(2015, 12, 6), 4, "");
 		Aliment boeufR = new Viande("boeuf", new Date(2015, 9, 15), 400, "g");
 		ArrayList<Aliment> boloA = new ArrayList<Aliment>();
@@ -65,6 +45,7 @@ public class Init {
 		frigo.setListeRecettes(omelette);
 		
 		System.out.println(frigo.recetteContenu());
+		return frigo;
 	}
 	
 }

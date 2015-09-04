@@ -1,16 +1,14 @@
 package frigo;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Scanner;
-import java.io.Console;
 
 
 public class Main {
 
 	public static void main (String [] arg  ){
-		menuCrade();
+		//menuCrade();
 		/*Frigo frigo = new Frigo();
 		Aliment tomate = new Fruit("tomate", new Date(2015, 12, 6), 4, "");
 		Aliment eggs = new Viande("egg", new Date(2015, 9, 10), 4, "");
@@ -34,20 +32,65 @@ public class Main {
 			monAction.run();
 			monAction = menu.getAction();
 		}*/
-}
-
-	
-	public static void menuCrade() {
-		 
+		/*GregorianCalendar greg = new GregorianCalendar(2015,6,11);
+		System.out.println(greg.get);*/
 
 		Frigo frigo = new Frigo();
-		Aliment tomate = new Fruit("tomate", new Date(2015, 12, 6), 4, "");
-		Aliment eggs = new Viande("egg", new Date(2015, 9, 10), 4, "");
-		Aliment beurre = new Laitier("beurre", new Date(2015, 10, 6), 250, "g");
-
+		Aliment tomate = new Fruit("tomate", new GregorianCalendar(2015, 06, 11), 4, "");
+		Aliment oeufs = new Viande("oeuf", new GregorianCalendar(2015, 9, 10), 6, "");
+		Aliment rape = new Laitier("rape", new GregorianCalendar(2015, 10, 6), 100, "g");
+		Aliment poulet = new Viande("poulet", new GregorianCalendar(2015, 9, 8), 1000, "g");
+		Aliment boeuf = new Viande("boeuf", new GregorianCalendar(2015, 9, 15), 800, "g");
+		Aliment frites = new Legume("frites", new GregorianCalendar(2016, 9, 10), 1500, "g");
+		Aliment haricots = new Legume("haricots", new GregorianCalendar(2015, 9, 20), 250, "g");
+		Aliment dinde = new Viande("dinde", new GregorianCalendar(2015, 9, 30), 300, "g");
+		Aliment cremeFraiche = new Laitier("creme", new GregorianCalendar(2015, 9, 15), 100, "g");
+		
 		frigo.setAliments(tomate);
-		frigo.setAliments(eggs);
-		frigo.setAliments(beurre);
+		frigo.setAliments(oeufs);
+		frigo.setAliments(rape);
+		frigo.setAliments(poulet);
+		frigo.setAliments(boeuf);
+		frigo.setAliments(frites);
+		frigo.setAliments(haricots);
+		frigo.setAliments(dinde);
+		frigo.setAliments(cremeFraiche);
+
+		Aliment tomateR = new Fruit("tomate", new GregorianCalendar(2015, 12, 6), 4, "");
+		Aliment boeufR = new Viande("boeuf", new GregorianCalendar(2015, 9, 15), 400, "g");
+		ArrayList<Aliment> boloA = new ArrayList<Aliment>();
+		boloA.add(tomateR);
+		boloA.add(boeufR);
+		Recette bolo = new Recette("bolognaise", boloA);
+		
+		Aliment oeufsR = new Viande("oeuf", new GregorianCalendar(2015, 9, 10), 4, "");
+		Aliment rapeR = new Laitier("rape", new GregorianCalendar(2015, 10, 6), 30, "g");
+		ArrayList<Aliment> omeletteA = new ArrayList<Aliment>();
+		omeletteA.add(oeufsR);
+		omeletteA.add(rapeR);
+		Recette omelette = new Recette("omelette", omeletteA);
+		
+		Aliment pouletR = new Viande("poulet", new GregorianCalendar(2015, 9, 8), 1000, "g");
+		Aliment fritesR = new Legume("frites", new GregorianCalendar(2016, 9, 10), 600, "g");
+		ArrayList<Aliment> chickenA = new ArrayList<Aliment>();
+		chickenA.add(pouletR);
+		chickenA.add(fritesR);
+		Recette chickNFries = new Recette("chickNFries", chickenA);
+		
+		Aliment haricotsR = new Legume("haricots", new GregorianCalendar(2015, 9, 20), 150, "g");
+		Aliment dindeR = new Viande("dinde", new GregorianCalendar(2015, 9, 30), 300, "g");
+		Aliment cremeFraicheR = new Laitier("creme", new GregorianCalendar(2015, 9, 15), 20, "g");
+		ArrayList<Aliment> escalopeA = new ArrayList<Aliment>();
+		escalopeA.add(haricotsR);
+		escalopeA.add(dindeR);		
+		escalopeA.add(cremeFraicheR);
+		Recette escalope = new Recette("escalope de dinde a la creme + haricots", escalopeA);
+		
+		frigo.setListeRecettes(bolo);
+		frigo.setListeRecettes(escalope);
+		frigo.setListeRecettes(chickNFries);
+		frigo.setListeRecettes(omelette);
+		
 
 
 		System.out.println("******************************");
@@ -133,7 +176,7 @@ public class Main {
 					System.out.println("En quel quantité?");
 					int qute = Integer.parseInt(sc.nextLine());
 
-					System.out.println("Quel est sa date de péremption?(format mm/jj/aaaa)");
+					System.out.println("Quel est sa date de péremption?(format jj/mm/aaaa)");
 					System.out.println("(ecrire no si il y en a pas)");
 					String dateRecup = sc.nextLine();
 					String unite;
@@ -146,7 +189,8 @@ public class Main {
 						}
 						else{
 							try {
-								frigo.setAliments(new Fruit(nom, new Date(dateRecup), qute, ""));
+								frigo.setAliments(new Fruit(nom, new GregorianCalendar(Integer.parseInt(dateRecup.substring(0, 2)),Integer.parseInt(dateRecup.substring(3, 5))-1,Integer.parseInt(dateRecup.substring(6, 10))), qute, ""));
+								//frigo.setAliments(new Fruit(nom, qute, ""));
 							} catch (Exception e) {
 								// TODO: handle exception
 							}
@@ -161,11 +205,12 @@ public class Main {
 							unite = "";
 						}
 						if(dateRecup.equals("no")){
-							frigo.setAliments(new Laitier(nom, qute, unite));
+							frigo.setAliments(new Laitier(nom, qute, unite.substring(0,1)));
 						}
 						else{
 							try {
-								frigo.setAliments(new Laitier(nom, new Date(dateRecup), qute, unite));
+								frigo.setAliments(new Laitier(nom, new GregorianCalendar(Integer.parseInt(dateRecup.substring(0, 2)),Integer.parseInt(dateRecup.substring(3, 5))-1,Integer.parseInt(dateRecup.substring(6, 10))), qute, unite.substring(0,1)));
+								//frigo.setAliments(new Laitier(nom, qute, unite));
 							} catch (Exception e) {
 								// TODO: handle exception
 							}
@@ -180,11 +225,12 @@ public class Main {
 							unite = "";
 						}
 						if(dateRecup.equals("no")){
-							frigo.setAliments(new Legume(nom, qute, unite));
+							frigo.setAliments(new Legume(nom, qute, unite.substring(0,1)));
 						}
 						else{
 							try {
-								frigo.setAliments(new Legume(nom, new Date(dateRecup), qute, unite));
+								frigo.setAliments(new Legume(nom, new GregorianCalendar(Integer.parseInt(dateRecup.substring(0, 2)),Integer.parseInt(dateRecup.substring(3, 5))-1,Integer.parseInt(dateRecup.substring(6, 10))), qute, unite.substring(0,1)));
+								//frigo.setAliments(new Legume(nom, qute, unite));
 							} catch (Exception e) {
 								// TODO: handle exception
 							}
@@ -195,11 +241,12 @@ public class Main {
 
 						
 						if(dateRecup.equals("no")){
-							frigo.setAliments(new Legume(nom, qute, "gramme"));
+							frigo.setAliments(new Legume(nom, qute, "g"));
 						}
 						else{
 							try {
-								frigo.setAliments(new Legume(nom, new Date(dateRecup), qute, "gramme"));
+								frigo.setAliments(new Legume(nom, new GregorianCalendar(Integer.parseInt(dateRecup.substring(0, 2)),Integer.parseInt(dateRecup.substring(3, 5))-1,Integer.parseInt(dateRecup.substring(6, 10))), qute, "g"));
+								//frigo.setAliments(new Legume(nom, qute, "gramme"));
 							} catch (Exception e) {
 								// TODO: handle exception
 							}
@@ -219,10 +266,12 @@ public class Main {
 					System.out.println("En quelle quantité?");
 					qute = Integer.parseInt(sc.nextLine());
 					
+					boolean sort = true;
 					for (Aliment ali : frigo.getListeAliments()) { 
-						if(ali.getNom().equals(nom)){
+						if(ali.getNom().equals(nom) && sort){
 							//if(ali.getQuantite()>qute){
 								frigo.retirerQuantite(ali, qute);
+								sort = false;
 							//}
 							if(ali.getQuantite()==0){
 								frigo.enleverAliments(nom);
@@ -238,8 +287,9 @@ public class Main {
 					break;
 				}
 				break;
-			case 3 : //proposer des recettes
-				
+			case 3 : //proposer des recettes				
+				System.out.println(frigo.recetteContenu());
+				choix = 0;
 				break;
 			default : 
 
@@ -250,6 +300,6 @@ public class Main {
 
 	}
 
-	}
+}
 
 

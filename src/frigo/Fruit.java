@@ -1,10 +1,10 @@
 package frigo;
 
-import java.util.Date;
+import java.util.GregorianCalendar;
 
 public class Fruit extends Aliment {
 
-	public Fruit(String nom, Date peremption, int quantite, String unite) {
+	public Fruit(String nom, GregorianCalendar peremption, int quantite, String unite) {
 		super(nom, peremption, quantite, unite);
 		// TODO Auto-generated constructor stub
 	}

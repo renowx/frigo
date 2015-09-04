@@ -5,7 +5,6 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Comparator;
 import java.util.Date;
-import java.util.Collections;
 import java.util.List;
 
 public class Recette {
@@ -36,11 +35,13 @@ public class Recette {
 	
 	public String recetteValide(Frigo frigo){
 		boolean res=false;
+		int i = 0;
 		for (Aliment aliment : listeAliments) {
 			for(Aliment aliFrigo : frigo.getListeAliments()){
 				if(aliFrigo.getNom().equals(aliment.getNom())){
 					if(aliFrigo.getQuantite()>=aliment.getQuantite()){
 						res = true;
+						i++;
 					}
 					else{
 						return "Recette impossible !";
@@ -48,7 +49,7 @@ public class Recette {
 				}
 			}
 		}
-		if(res){
+		if(res && i==listeAliments.size()){
 			return"Recette possible !";
 		}
 		else{

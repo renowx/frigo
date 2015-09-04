@@ -1,16 +1,10 @@
 package frigo;
 
-import static org.junit.Assert.*;
-
 import java.sql.Date;
 import java.util.ArrayList;
 
 import junit.framework.Assert;
 import junit.framework.TestCase;
-
-import frigo.Aliment;
-import frigo.Frigo;
-import frigo.Recette;
 
 public class TestRecette extends TestCase {
 

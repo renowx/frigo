@@ -1,10 +1,5 @@
 package frigo;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 
 public class Frigo {
@@ -35,6 +30,7 @@ public class Frigo {
 		
 	public void enleverAliments(String nom){
 		ArrayList<Aliment> temp = new ArrayList<>();
+	
 		for (Aliment aliment : listeAliments) {
 			if(!aliment.getNom().equals(nom)){
 				temp.add(aliment);
@@ -66,11 +62,14 @@ public class Frigo {
 				/*if(aliment.getQuantite()==0){
 					listeAliments.remove(aliment);
 				}*/
+				return;
 			}
 			else if(aliment.getNom().equals(aliment2.getNom()) && aliment.getQuantite()-quantite<=0){
 				System.out.println("Vous n'avez pas assez de quantité");
+				return;
 			}
 		}
+		return;
 	}
 	
 	/*public String[] alimentCSV(){ 
