@@ -2,6 +2,7 @@ package frigo;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.Scanner;
 import java.io.Console;
 
@@ -184,7 +185,7 @@ public class Main {
 					}
 					System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 					break;
-				case 2 : //retirer un aliment. Il faudra verifié si l'aliment est dans le frigo
+				case 2 : 
 					System.out.println("Quel est le nom de l'aliment que vous souhaitez retirer : ");
 					nom = sc.nextLine();
 					System.out.println("En quelle quantité?");
