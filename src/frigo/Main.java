@@ -10,9 +10,37 @@ import java.io.Console;
 public class Main {
 
 	public static void main (String [] arg  ){
+		menuCrade();
+		/*Frigo frigo = new Frigo();
+		Aliment tomate = new Fruit("tomate", new Date(2015, 12, 6), 4, "");
+		Aliment eggs = new Viande("egg", new Date(2015, 9, 10), 4, "");
+		Aliment beurre = new Laitier("beurre", new Date(2015, 10, 6), 250, "g");
 
-		Frigo frigo = new Frigo(); 
+		frigo.setAliments(tomate);
+		frigo.setAliments(eggs);
+		frigo.setAliments(beurre);
+		
+		Menu menu = new Menu();
+		menu.enteteDebut();
+		
+		int choix = menu.menuDebut();
+		ActionMenu action = new ActionMenu(choix, frigo);
+		if(choix==1){
+				action.consulterFrigo();
+		}
+		
+		Action monAction = menu.getAction();
+		while (monaction != null) {
+			monAction.run();
+			monAction = menu.getAction();
+		}*/
+}
 
+	
+	public static void menuCrade() {
+		 
+
+		Frigo frigo = new Frigo();
 		Aliment tomate = new Fruit("tomate", new Date(2015, 12, 6), 4, "");
 		Aliment eggs = new Viande("egg", new Date(2015, 9, 10), 4, "");
 		Aliment beurre = new Laitier("beurre", new Date(2015, 10, 6), 250, "g");
@@ -211,7 +239,7 @@ public class Main {
 				}
 				break;
 			case 3 : //proposer des recettes
-
+				
 				break;
 			default : 
 
@@ -221,5 +249,7 @@ public class Main {
 		}
 
 	}
-}
+
+	}
+
 
