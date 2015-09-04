@@ -9,8 +9,8 @@ import java.util.ArrayList;
 
 public class Frigo {
 
-	ArrayList<Aliment> listeAliments;
-	ArrayList<Recette> listeRecettes;
+	private ArrayList<Aliment> listeAliments;
+	private ArrayList<Recette> listeRecettes;
 	
 	public ArrayList<Recette> getListeRecettes() {
 		return listeRecettes;
@@ -34,11 +34,13 @@ public class Frigo {
 	}
 		
 	public void enleverAliments(String nom){
+		ArrayList<Aliment> temp = new ArrayList<>();
 		for (Aliment aliment : listeAliments) {
-			if(aliment.getNom().equals(nom)){
-				listeAliments.remove(aliment);
+			if(!aliment.getNom().equals(nom)){
+				temp.add(aliment);
 			}
 		}
+		listeAliments = temp;
 	}
 		
 	public String toString() {
