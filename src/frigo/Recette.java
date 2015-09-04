@@ -79,5 +79,7 @@ public class Recette {
 		return new ArrayList<Aliment>(Arrays.asList(alimentsTries));
 	}
 	
+	
+	
 }
 
