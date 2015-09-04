@@ -1,6 +1,7 @@
 package frigo;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Frigo {
 
@@ -70,6 +71,23 @@ public class Frigo {
 			}
 		}
 		return;
+	}
+	
+	public void trierListe(){
+		List listNonTrie = new ArrayList<Aliment>();
+		int iter = listeAliments.size();
+		listNonTrie = listeAliments;
+		int i = 0;
+		boolean fini = false;
+		while (listeAliments.get(i).getPeremption().before(listeAliments.get(i+1).getPeremption()) && fini == false){
+			Aliment tmp1 = listeAliments.get(i);
+			Aliment tmp2 = listeAliments.get(i+1);
+			
+			
+		}
+		
+	
+		
 	}
 	
 	/*public String[] alimentCSV(){ 

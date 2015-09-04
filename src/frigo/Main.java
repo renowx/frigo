@@ -105,7 +105,7 @@ public class Main {
 			System.out.println("Que voulez-vous faire ?\n");
 			System.out.println("1) Voir le contenu de votre frigo");
 			System.out.println("2) Ajouter ou retirer un aliment");
-			System.out.println("3) Consulter les recettes\n");
+			//System.out.println("3) Consulter les recettes\n");
 
 			Scanner sc = new Scanner(System.in);
 
@@ -173,10 +173,14 @@ public class Main {
 					System.out.println("Quel est le nom de votre aliment?");
 					String nom = sc.nextLine();
 
-					System.out.println("En quel quantité?");
+					System.out.println("En quel quantitï¿½?");
 					int qute = Integer.parseInt(sc.nextLine());
 
+<<<<<<< HEAD
 					System.out.println("Quel est sa date de péremption?(format jj/mm/aaaa)");
+=======
+					System.out.println("Quel est sa date de pï¿½remption?(format mm/jj/aaaa)");
+>>>>>>> origin/master
 					System.out.println("(ecrire no si il y en a pas)");
 					String dateRecup = sc.nextLine();
 					String unite;
@@ -199,7 +203,7 @@ public class Main {
 						break;
 					case 2: // laitier
 
-						System.out.println("Quel est l'unité de votre produit laitier (gramme, litre ou unite)");
+						System.out.println("Quel est l'unitï¿½ de votre produit laitier (gramme, litre ou unite)");
 						unite = sc.nextLine();
 						if(unite.equals("unite")){
 							unite = "";
@@ -219,7 +223,7 @@ public class Main {
 						break;
 					case 3: // Legume
 
-						System.out.println("Quel est l'unité de votre legume (gramme ou unite)");
+						System.out.println("Quel est l'unitï¿½ de votre legume (gramme ou unite)");
 						unite = sc.nextLine();
 						if(unite.equals("unite")){
 							unite = "";
@@ -263,7 +267,7 @@ public class Main {
 				case 2 : 
 					System.out.println("Quel est le nom de l'aliment que vous souhaitez retirer : ");
 					nom = sc.nextLine();
-					System.out.println("En quelle quantité?");
+					System.out.println("En quelle quantitï¿½?");
 					qute = Integer.parseInt(sc.nextLine());
 					
 					boolean sort = true;
