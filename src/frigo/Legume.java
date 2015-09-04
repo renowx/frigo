@@ -1,5 +1,9 @@
 package frigo;
 
+<<<<<<< Updated upstream
+=======
+import java.util.Date;
+>>>>>>> Stashed changes
 import java.util.GregorianCalendar;
 
 public class Legume extends Aliment{
@@ -12,4 +16,5 @@ public class Legume extends Aliment{
 	public Legume(String nom, int quantite, String unite) {
 		super(nom, quantite, unite);
 	}
+
 }
