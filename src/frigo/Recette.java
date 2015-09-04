@@ -34,7 +34,7 @@ public class Recette {
 		return listeAliments;
 	}
 	
-	public boolean recetteValide(Frigo frigo){
+	public String recetteValide(Frigo frigo){
 		boolean res=false;
 		for (Aliment aliment : listeAliments) {
 			for(Aliment aliFrigo : frigo.getListeAliments()){
@@ -43,24 +43,22 @@ public class Recette {
 						res = true;
 					}
 					else{
-						System.out.println("Recette impossible !");
-						return false;
+						return "Recette impossible !";
 					}
 				}
 			}
 		}
-		if(res == true){
-			System.out.println("Recette possible !");
+		if(res){
+			return"Recette possible !";
 		}
 		else{
-			System.out.println("Recette impossible !");
+			return "Recette impossible !";
 		}
-		return res;
 	}
 	
 	public boolean estConsommable(Aliment a){
 		Date c = Calendar.getInstance( ).getTime();
-		if (a.getPeremption().before(c)){
+		if (a.getPeremption().after(c)){
 			return true;
 		} else {
 			return false;
@@ -78,8 +76,6 @@ public class Recette {
 		});
 		return new ArrayList<Aliment>(Arrays.asList(alimentsTries));
 	}
-	
-	
 	
 }
 

@@ -52,22 +52,9 @@ public class Frigo {
 	}
 		
 	public String recetteContenu(){
-		int res = 0;
 		String recettes = "";
 		for(Recette recette : getListeRecettes()){
-			for (Aliment aliment : recette.listeAliments) {
-				for(Aliment aliFrigo : getListeAliments()){
-					if(aliFrigo.getNom().equals(aliment.getNom())){
-						if(aliFrigo.getQuantite()>=aliment.getQuantite()){
-							res = res + 1;
-						}
-					}
-				}
-			}
-			if(res == listeRecettes.size()){
-				recettes = recettes + recette.getNom() + " ";
-			}
-			res = 0;
+			recettes = recettes + recette.getNom() + " : " + recette.recetteValide(this) + "\n";			
 		}
 	return recettes;
 	}
@@ -81,7 +68,7 @@ public class Frigo {
 				}*/
 			}
 			else if(aliment.getNom().equals(aliment2.getNom()) && aliment.getQuantite()-quantite<=0){
-				System.out.println("Vous n'avez pas assez de quantité");
+				System.out.println("Vous n'avez pas assez de quantitÃ©");
 			}
 		}
 	}

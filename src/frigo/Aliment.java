@@ -1,5 +1,6 @@
 package frigo;
 
+import java.util.Calendar;
 import java.util.Date;
 
 abstract class Aliment {
@@ -67,5 +68,14 @@ abstract class Aliment {
 	
 	protected void setUnite(String unite) {
 		this.unite = unite;
+	}
+	
+	protected boolean estConsommable(){
+		Date c = Calendar.getInstance( ).getTime();
+		if (getPeremption().after(c)){
+			return true;
+		} else {
+			return false;
+		}
 	}
 }
