@@ -105,7 +105,7 @@ public class Main {
 			System.out.println("Que voulez-vous faire ?\n");
 			System.out.println("1) Voir le contenu de votre frigo");
 			System.out.println("2) Ajouter ou retirer un aliment");
-			//System.out.println("3) Consulter les recettes\n");
+			System.out.println("3) Consulter les recettes\n");
 
 			Scanner sc = new Scanner(System.in);
 
@@ -299,7 +299,7 @@ public class Main {
 
 				break;
 			}
-
+		
 		}
 
 	}
