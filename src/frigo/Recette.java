@@ -60,7 +60,7 @@ public class Recette {
 	
 	public boolean estConsommable(Aliment a){
 		Date c = Calendar.getInstance( ).getTime();
-		if (a.getPeremption().before(c)){
+		if (a.getPeremption().after(c)){
 			return true;
 		} else {
 			return false;
@@ -78,8 +78,6 @@ public class Recette {
 		});
 		return new ArrayList<Aliment>(Arrays.asList(alimentsTries));
 	}
-	
-	
 	
 }
 
