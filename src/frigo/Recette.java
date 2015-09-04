@@ -69,7 +69,6 @@ public class Recette {
 	
 	public List<Aliment> triSelonDatePeremption(){
 		Aliment[] alimentsTries = (Aliment[]) listeAliments.toArray();
-
 		//Aliment[] alimentsTries = listeAliments.toArray(new Aliment[]{});
 		Arrays.sort(alimentsTries, new Comparator<Aliment>() {
 			@Override
